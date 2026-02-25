@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Symbol Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin: 20px 0;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #667eea;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Weather Symbol Finder</h1>
+        <p>Enter a city name to see its current weather as a symbol</p>
+        <form method="POST" action="/get_weather">
+            <div class="form-group">
+                <input type="text" name="city" placeholder="Enter city name (e.g., London, New York, Tokyo)" required>
+            </div>
+            <button type="submit">Get Weather Symbol</button>
+        </form>
+    </div>
+</body>
+</html>

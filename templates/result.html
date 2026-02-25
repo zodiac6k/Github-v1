@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .symbol-display {
+            font-size: 120px;
+            margin: 30px 0;
+        }
+        .info {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+        .city-name {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .temperature {
+            color: #666;
+            font-size: 20px;
+        }
+        .error {
+            color: #e74c3c;
+            background-color: #fadbd8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if error %}
+            <h1>Error</h1>
+            <div class="error">{{ error }}</div>
+        {% else %}
+            <h1>Weather Symbol</h1>
+            <div class="symbol-display">{{ symbol }}</div>
+            <div class="info">
+                <div class="city-name">{{ city }}</div>
+                <div class="temperature">Temperature: {{ temperature }}C</div>
+            </div>
+        {% endif %}
+        <a href="/"> Search Another City</a>
+    </div>
+</body>
+</html>
